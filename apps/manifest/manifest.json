@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "Vocabulary Revision",
+    "version": "0.9",
+    "description": "Vocabulary Revision",
+    "icons": {
+        "16": "hanamaru.png",
+        "48": "hanamaru.png",
+        "128": "hanamaru.png"
+    },
+    "action": {
+        "default_popup": "index.html",
+        "default_icon": {
+            "16": "hanamaru.png",
+            "48": "hanamaru.png",
+            "128": "hanamaru.png"
+        }
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": [
+        "storage"
+    ]
+}
