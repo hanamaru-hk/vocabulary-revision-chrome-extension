@@ -47,11 +47,11 @@ describe('addMenuEventListeners', () => {
         const storageListener = vi.mocked(chrome.storage.onChanged.addListener).mock.calls[0][0] as Function;
 
         // Simulate a language change in storage
-        storageListener({ config: { newValue: { language: 'zh-TW' } } }, 'local');
+        storageListener({ config: { newValue: { language: 'zh-HK' } } }, 'local');
 
         // Wait for the async changeLanguage to resolve
         await vi.waitFor(() => {
-            expect(i18nMock.changeLanguage).toHaveBeenCalledWith('zh-TW');
+            expect(i18nMock.changeLanguage).toHaveBeenCalledWith('zh-HK');
         });
         await vi.waitFor(() => {
             expect(chrome.contextMenus.update).toHaveBeenCalledWith('vocabulary-revision-lite', {

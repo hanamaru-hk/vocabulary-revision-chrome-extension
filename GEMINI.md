@@ -17,7 +17,7 @@
 - `apps/manifest` — Chrome extension manifest, icons, and static assets
 - `packages/config` — Chrome storage config (`getConfig`, `setConfig`, `defaultConfig`)
 - `packages/database` — IndexedDB wrapper for vocabulary CRUD (`addVocabulary`, `getAllVocabularies`, etc.)
-- `packages/i18n` — i18next setup + locale JSON files (`locales/en.json`, `locales/zh-tw.json`)
+- `packages/i18n` — i18next setup + locale JSON files (`locales/en.json`, `locales/zh-hk.json`)
 
 ## Key Scripts
 
@@ -36,7 +36,7 @@ Stored in `chrome.storage.local` via `@repo/config`:
 | Field       | Type    | Default       | Description                        |
 |-------------|---------|---------------|------------------------------------|
 | `llm`       | string  | `perplexity`  | LLM provider for word lookup       |
-| `language`  | string  | `en`          | UI language (`en` or `zh-TW`)      |
+| `language`  | string  | `en`          | UI language (`en` or `zh-HK`)      |
 | `newTab`    | boolean | `true`        | Open result in new tab             |
 | `firstTime` | boolean | `true`        | Whether to show the Welcome page   |
 
