@@ -1,8 +1,11 @@
-
-import { defineConfig } from 'vite';
+import { defineConfig } from 'vitest/config';
 import { resolve } from 'path';
 
 export default defineConfig({
+    test: {
+        globals: true,
+        setupFiles: ['./src/setupTests.ts'],
+    },
     build: {
         outDir: 'dist',
         emptyOutDir: true,
