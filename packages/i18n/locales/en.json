@@ -1,4 +1,46 @@
 {
     "from": "from",
-    "to": "to"
+    "to": "to",
+    "app": {
+        "title": "Vocabulary Revision",
+        "nav": {
+            "vocabulary": "Vocabulary List",
+            "settings": "Settings"
+        },
+        "settings": {
+            "title": "Settings",
+            "language": {
+                "label": "Language/語言",
+                "placeholder": "Pick one/選擇語言",
+                "current": "Current Language/當前語言: {{lng}}",
+                "name": {
+                    "en": "English",
+                    "zh-TW": "Chinese (Traditional)"
+                }
+            },
+            "new_tab": {
+                "label": "Open in New Tab after right click the highlighted text",
+                "placeholder": "Pick one",
+                "yes": "Yes",
+                "no": "No"
+            }
+        },
+        "welcome": {
+            "title": "Welcome",
+            "confirm": "Start"
+        },
+        "vocabulary": {
+            "title": "Vocabulary List",
+            "table": {
+                "word": "Word",
+                "url": "Link",
+                "created_at": "Created At"
+            }
+        },
+        "common": {
+            "menu": "Menu",
+            "context_menu": "Check \"%s\""
+        },
+        "to": "url"
+    }
 }

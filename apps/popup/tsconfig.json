@@ -18,6 +18,15 @@
         "paths": {
             "@/*": [
                 "../../*"
+            ],
+            "@repo/config": [
+                "../../packages/config"
+            ],
+            "@repo/database": [
+                "../../packages/database"
+            ],
+            "@repo/i18n": [
+                "../../packages/i18n"
             ]
         }
     },

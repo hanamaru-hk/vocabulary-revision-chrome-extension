@@ -9,7 +9,8 @@ This library is used to handle the configuration which is stored in chrome.stora
     "config": {
         "from": "JP",
         "to": "zh-TW",
-        "": ""
+        "llm": "perplexity",
+        "language": "en"
     }
 }
 ```

@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "Vocabulary Revision",
     "version": "0.9",
-    "description": "Vocabulary Revision",
+    "description": "Revise the vocabulary with help of LLM",
     "icons": {
         "16": "hanamaru.png",
         "48": "hanamaru.png",
@@ -16,10 +16,14 @@
             "128": "hanamaru.png"
         }
     },
+    "permissions": [
+        "storage",
+        "unlimitedStorage",
+        "contextMenus",
+        "tabs",
+        "activeTab"
+    ],
     "background": {
         "service_worker": "background.js"
-    },
-    "permissions": [
-        "storage"
-    ]
+    }
 }

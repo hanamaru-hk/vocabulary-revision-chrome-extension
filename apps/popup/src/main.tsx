@@ -5,7 +5,7 @@ import { MemoryRouter } from 'react-router-dom';
 import App from './App' // Removed .tsx extension for compatibility
 import '@mantine/core/styles.css';
 import './index.css'
-import { initI18nReact } from 'i18n'
+import { initI18nReact } from '@repo/i18n'
 
 initI18nReact();
 

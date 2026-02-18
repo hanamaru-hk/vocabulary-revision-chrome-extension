@@ -4,15 +4,15 @@ import { IconSettings, IconBook, IconX } from '@tabler/icons-react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-export function ApplicationShell({ children }: { children: React.ReactNode }) {
+export function ApplicationShell({ children, showHeader = true }: { children: React.ReactNode, showHeader?: boolean }) {
     const [opened, { toggle, close }] = useDisclosure(false);
     const navigate = useNavigate();
     const location = useLocation();
     const { t } = useTranslation();
 
     const links = [
-        { icon: IconBook, label: 'Vocabulary List', to: '/vocabulary' },
-        { icon: IconSettings, label: 'Settings', to: '/settings' },
+        { icon: IconBook, label: t('app.nav.vocabulary'), to: '/vocabulary' },
+        { icon: IconSettings, label: t('app.nav.settings'), to: '/settings' },
     ];
 
     const mainLinks = links.map((link) => (
@@ -31,25 +31,27 @@ export function ApplicationShell({ children }: { children: React.ReactNode }) {
 
     return (
         <AppShell
-            header={{ height: 60 }}
+            header={showHeader ? { height: 60 } : { height: 0 }}
             padding="md"
         >
-            <AppShell.Header>
-                <Group h="100%" px="md" justify="space-between">
-                    <Group>
-                        <Burger opened={opened} onClick={toggle} />
-                        <Title order={3}>Vocabulary Revision</Title>
+            {showHeader && (
+                <AppShell.Header>
+                    <Group h="100%" px="md" justify="space-between">
+                        <Group>
+                            <Burger opened={opened} onClick={toggle} />
+                            <Title order={3}>{t('app.title')}</Title>
+                        </Group>
+                        <ActionIcon variant="subtle" color="gray" onClick={() => window.close()}>
+                            {/* @ts-ignore */}
+                            <IconX size="1.2rem" />
+                        </ActionIcon>
                     </Group>
-                    <ActionIcon variant="subtle" color="gray" onClick={() => window.close()}>
-                        {/* @ts-ignore */}
-                        <IconX size="1.2rem" />
-                    </ActionIcon>
-                </Group>
-            </AppShell.Header>
+                </AppShell.Header>
+            )}
             <AppShell.Main>
                 {children}
             </AppShell.Main>
-            <Drawer opened={opened} onClose={close} title="Menu">
+            <Drawer opened={opened} onClose={close} title={t('app.common.menu')}>
                 {mainLinks}
             </Drawer>
         </AppShell>
