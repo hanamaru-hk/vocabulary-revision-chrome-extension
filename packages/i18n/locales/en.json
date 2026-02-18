@@ -26,7 +26,10 @@
             },
             "reset": {
                 "button": "Reset to Default",
-                "confirm": "Are you sure you want to reset all settings to default?"
+                "title": "Reset settings?",
+                "confirm": "Are you sure you want to reset all settings to default? After reset, the extension will be restored to the initial installation state",
+                "cancel": "Cancel",
+                "confirm_button": "Reset"
             }
         },
         "welcome": {

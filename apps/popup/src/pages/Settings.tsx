@@ -1,4 +1,4 @@
-import { Container, Title, Select, Button } from '@mantine/core';
+import { Container, Title, Select, Button, Modal, Group, Text } from '@mantine/core';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
@@ -9,6 +9,7 @@ export function Settings() {
     const { t, i18n } = useTranslation();
     const navigate = useNavigate();
     const [openInNewTab, setOpenInNewTab] = useState<string>('true');
+    const [resetModalOpen, setResetModalOpen] = useState(false);
 
     useEffect(() => {
         getConfig().then((config) => {
@@ -31,14 +32,16 @@ export function Settings() {
         await setConfig({ ...config, newTab: isNewTab });
     };
 
-    const handleResetConfig = async () => {
-        const confirmed = window.confirm(t('app.settings.reset.confirm'));
-        if (!confirmed) return;
+    const handleResetClick = () => setResetModalOpen(true);
 
+    const handleResetConfirm = async () => {
         await setConfig(defaultConfig);
         await i18n.changeLanguage(defaultConfig.language);
+        setResetModalOpen(false);
         navigate('/');
     };
+
+    const handleResetCancel = () => setResetModalOpen(false);
 
     return (
         <Container>
@@ -62,12 +65,29 @@ export function Settings() {
                 onChange={handleNewTabChange}
             />
 
+            <Modal
+                opened={resetModalOpen}
+                onClose={handleResetCancel}
+                title={t('app.settings.reset.title')}
+                centered
+            >
+                <Text mb="sm">{t('app.settings.reset.confirm')}</Text>
+                <Group justify="flex-end">
+                    <Button variant="default" size="xs" onClick={handleResetCancel}>
+                        {t('app.settings.reset.cancel')}
+                    </Button>
+                    <Button color="red" size="xs" onClick={handleResetConfirm}>
+                        {t('app.settings.reset.confirm_button')}
+                    </Button>
+                </Group>
+            </Modal>
+
             <Button
                 mt="xl"
                 color="red"
                 variant="outline"
                 fullWidth
-                onClick={handleResetConfig}
+                onClick={handleResetClick}
             >
                 {t('app.settings.reset.button')}
             </Button>
