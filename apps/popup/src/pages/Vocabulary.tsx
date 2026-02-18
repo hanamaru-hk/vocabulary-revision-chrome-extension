@@ -1,4 +1,4 @@
-import { Table, Title, Container } from '@mantine/core';
+import { Table, ScrollArea } from '@mantine/core';
 import { useTranslation } from 'react-i18next';
 
 import { getAllVocabularies, Vocabulary as VocabularyType } from '@repo/database';
@@ -25,8 +25,7 @@ export function Vocabulary() {
     ));
 
     return (
-        <Container>
-            <Title order={2} mb="md">{t('app.vocabulary.title')}</Title>
+        <ScrollArea h={350} offsetScrollbars>
             <Table>
                 <Table.Thead>
                     <Table.Tr>
@@ -37,6 +36,6 @@ export function Vocabulary() {
                 </Table.Thead>
                 <Table.Tbody>{rows}</Table.Tbody>
             </Table>
-        </Container>
+        </ScrollArea>
     );
 }
