@@ -1,8 +1,9 @@
 {
     "manifest_version": 3,
-    "name": "Word Notebook",
+    "name": "__MSG_extensionName__",
     "version": "1.0.0",
-    "description": "Revise the vocabulary with assistance in structure",
+    "description": "__MSG_extensionDescription__",
+    "default_locale": "en",
     "icons": {
         "16": "icon16.png",
         "48": "icon48.png",

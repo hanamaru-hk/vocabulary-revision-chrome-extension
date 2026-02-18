@@ -15,7 +15,7 @@
                 "current": "Current Language/當前語言: {{lng}}",
                 "name": {
                     "en": "English",
-                    "zh-TW": "Chinese (Traditional)"
+                    "zh-HK": "Chinese (Traditional)"
                 }
             },
             "new_tab": {
