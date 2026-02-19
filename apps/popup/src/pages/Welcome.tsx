@@ -1,6 +1,6 @@
 import { Button, Center, Container, Select, Title, Stack, Image, ScrollArea } from '@mantine/core';
 import { useTranslation } from 'react-i18next';
-import { getConfig, setConfig } from '@repo/config';
+import { defaultConfig, setConfig } from '@repo/config';
 import { useNavigate } from 'react-router-dom';
 import wordNotebook from '../../../manifest/word-notebook.jpg';
 
@@ -14,8 +14,7 @@ export function Welcome() {
     };
 
     const handleConfirm = async () => {
-        const config = await getConfig();
-        await setConfig({ ...config, firstTime: false, language: i18n.language });
+        await setConfig({ ...defaultConfig, firstTime: false, language: i18n.language });
         navigate('/vocabulary');
     };
 
