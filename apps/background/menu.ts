@@ -2,18 +2,20 @@ import { getConfig, getLookupPrompt, llmLink } from '@repo/config';
 import { addWord } from '@repo/database';
 import { v4 as uuidv4 } from 'uuid';
 import { i18n } from '@repo/i18n';
+import { resolve } from 'path';
 
 type i18nType = typeof i18n;
 
 const MENU_ID = 'record_and_lookup';
 
-export const createMenu = (title: string) => {
-    chrome.contextMenus.create({
-        type: 'normal',
-        contexts: ['selection'],
-        title,
-        id: MENU_ID
-    });
+export const createMenu = (title: string): Promise<void> => {
+    return new Promise((resolve) =>
+        chrome.contextMenus.create({
+            type: 'normal',
+            contexts: ['selection'],
+            title,
+            id: MENU_ID
+        }, () => { resolve() }))
 };
 
 export const addMenuEventListeners = (i18n: i18nType) => {

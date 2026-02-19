@@ -7,7 +7,7 @@ const i18n = initI18nVanilla();
 const init = async () => {
     const config = await getConfig();
     await i18n.changeLanguage(config.language);
-    createMenu(i18n.t('app.common.context_menu_lookup'));
+    await createMenu(i18n.t('app.common.context_menu_lookup'));
 };
 
 chrome.runtime.onInstalled.addListener(async (_reason) => {
