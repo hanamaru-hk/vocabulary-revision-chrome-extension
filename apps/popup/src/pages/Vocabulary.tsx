@@ -1,4 +1,4 @@
-import { Table, ScrollArea, Pagination, Button, ActionIcon, Modal, Group, Text } from '@mantine/core';
+import { Table, ScrollArea, Pagination, Button, ActionIcon, Modal, Group, Text, Title } from '@mantine/core';
 import { IconTrash, IconSearch } from '@tabler/icons-react';
 import { useTranslation } from 'react-i18next';
 
@@ -121,7 +121,8 @@ export function Vocabulary() {
                 </ActionIcon>
             </Table.Td>
         </Table.Tr>
-    ));
+    ))
+        ;
 
     return (
         <>
@@ -154,7 +155,17 @@ export function Vocabulary() {
                             <Table.Th>{t('app.vocabulary.table.remove')}</Table.Th>
                         </Table.Tr>
                     </Table.Thead>
-                    <Table.Tbody>{rows}</Table.Tbody>
+                    {
+                        rows.length > 0 ? (
+                            <Table.Tbody>{rows}</Table.Tbody>
+                        ) :
+                            <Table.Tbody><Table.Tr>
+                                <Table.Td colSpan={4} ta='center'>
+                                    <p><Title order={3}>{t('app.vocabulary.table.no_data')}</Title></p>
+                                    <p><Text>{t('app.vocabulary.table.no_data_hint')}</Text></p>
+                                </Table.Td>
+                            </Table.Tr></Table.Tbody>
+                    }
                 </Table>
             </ScrollArea>
             <Pagination total={totalPages} value={activePage} onChange={setPage} mt="sm" />

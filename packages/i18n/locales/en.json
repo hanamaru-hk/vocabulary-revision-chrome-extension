@@ -58,7 +58,9 @@
                 "word": "Word",
                 "url": "Link",
                 "lookup": "Lookup",
-                "remove": "Remove"
+                "remove": "Remove",
+                "no_data": "No data.",
+                "no_data_hint": "Please right click any highlighted word in any webpage and select \"Record and Lookup\"."
             },
             "delete": {
                 "title": "Delete word",
