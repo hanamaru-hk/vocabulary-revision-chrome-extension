@@ -2,6 +2,10 @@
 
 ## Latest (Not yet packed)
 
+nothing as this moment
+
+## 1.2.1
+
 - chore - update 'no data' hint
 - chore - remove google searching as an llm option
 
