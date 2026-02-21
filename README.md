@@ -2,7 +2,9 @@
 
 A Chrome extension that helps you build vocabulary by recording words and the URLs where you first encountered them — because context is key to remembering new words.
 
-Inspired by [vocabulary-revision-lite](https://github.com/pakyinwww/vocabulary-revision-lite).
+## Installation
+
+You can install it from the google chrome web store. [Install Here](https://chromewebstore.google.com/detail/hanamaru-word-notebook/nimpjcegmngkomfolepcmcngndjomanl)
 
 ## Features
 
@@ -50,6 +52,11 @@ packages/
   i18n/        # i18next setup + locale files
 ```
 
+## Reference
+
+
+Inspired by [vocabulary-revision-lite](https://github.com/pakyinwww/vocabulary-revision-lite) which was written by the main developer of this repo long time ago.
+
 ## License
 
-[MIT](./LICENSE)
+[License](./LICENSE)
