@@ -8,7 +8,7 @@ const publishDir = path.join(rootDir, 'publish');
 const zipPath = path.join(publishDir, 'word-notebook.zip');
 
 if (!fs.existsSync(distDir)) {
-    console.error('dist/ not found. Run build:extension first.');
+    console.error('dist/ not found. Run build first.');
     process.exit(1);
 }
 
