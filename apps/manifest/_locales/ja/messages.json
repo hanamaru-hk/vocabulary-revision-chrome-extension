@@ -1,1 +1,8 @@
-{"extensionName":{"message":"花丸単語ノート"},"extensionDescription":{"message":"構造化されたサポートで語彙を復習"}}
+{
+    "extensionName": {
+        "message": "みんなの単語ノート"
+    },
+    "extensionDescription": {
+        "message": "構造化されたサポートで語彙を復習"
+    }
+}

@@ -1,1 +1,8 @@
-{"extensionName":{"message":"花丸生字簿"},"extensionDescription":{"message":"以結構化輔助複習單字"}}
+{
+    "extensionName": {
+        "message": "大家的生字簿"
+    },
+    "extensionDescription": {
+        "message": "以結構化輔助複習單字"
+    }
+}
