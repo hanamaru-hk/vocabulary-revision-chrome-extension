@@ -7,12 +7,14 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "test": "turbo run test",
-    "build:extension": "node scripts/bundle-extension.js",
-    "pack:extension": "npm run build:extension && node scripts/pack-extension.js",
+    "compile": "turbo run build",
+    "build": "node scripts/bundle-extension.js",
+    "build:skip-test": "node scripts/bundle-extension-no-test.js",
+    "pack": "npm run build && node scripts/pack-extension.js",
+    "pack:skip-test": "npm run build:skip-test && node scripts/pack-extension.js",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
