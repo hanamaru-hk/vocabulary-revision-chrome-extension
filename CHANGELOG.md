@@ -4,6 +4,10 @@
 
 nothing as this moment
 
+## 1.2.2
+
+- chore - change the name of the app
+
 ## 1.2.1
 
 - chore - update 'no data' hint
