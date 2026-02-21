@@ -88,8 +88,8 @@ export function Settings() {
                 label={t('app.settings.new_tab.label')}
                 placeholder={t('app.settings.new_tab.placeholder')}
                 data={[
-                    { value: 'true', label: t('app.settings.new_tab.yes') },
-                    { value: 'false', label: t('app.settings.new_tab.no') }
+                    { value: 'true', label: t('app.settings.new_tab.record_and_lookup') },
+                    { value: 'false', label: t('app.settings.new_tab.record') }
                 ]}
                 value={openInNewTab}
                 onChange={handleNewTabChange}

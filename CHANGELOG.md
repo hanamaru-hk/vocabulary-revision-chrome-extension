@@ -2,6 +2,8 @@
 
 ## Latest (Not yet packed)
 
+- feat - add "add word" button
+
 ## 1.1.1
 
 - fix - no reaction after clicking "record and lookup"

@@ -28,10 +28,10 @@
                 }
             },
             "new_tab": {
-                "label": "右鍵點擊高亮的單字後，在新分頁開啟",
+                "label": "右鍵點擊高亮的單字後的動作",
                 "placeholder": "請選擇",
-                "yes": "是",
-                "no": "否"
+                "record": "記錄",
+                "record_and_lookup": "記錄並查詢"
             },
             "treat_as": {
                 "label": "將生字視為",
@@ -53,20 +53,31 @@
         },
         "vocabulary": {
             "title": "單字列表",
-            "export": "匯出為 CSV",
+            "export": "匯出",
             "table": {
                 "word": "單字",
                 "url": "連結",
                 "lookup": "查詢",
                 "remove": "刪除",
                 "no_data": "沒有資料",
-                "no_data_hint": "請於任何網頁先用右鍵點擊任何高亮的單字，然後選擇「記錄並查詢」"
+                "no_data_hint1": "請用右上角的新增單字功能，新增一個單字",
+                "no_data_hint2": "請於任何網頁先用右鍵點擊任何高亮的單字，然後選擇「記錄並查詢」"
             },
             "delete": {
                 "title": "刪除單字",
                 "confirm_message": "確定要從列表中刪除此單字？",
                 "cancel": "取消",
                 "confirm": "刪除"
+            },
+            "add": {
+                "button": "單字",
+                "title": "新增單字",
+                "word_label": "單字",
+                "url_label": "網址",
+                "confirm": "新增",
+                "cancel": "取消",
+                "word_required": "請輸入單字",
+                "url_required": "請輸入網址"
             }
         },
         "common": {

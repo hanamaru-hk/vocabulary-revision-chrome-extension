@@ -1,8 +1,8 @@
-import { Table, ScrollArea, Pagination, Button, ActionIcon, Modal, Group, Text, Title } from '@mantine/core';
-import { IconTrash, IconSearch } from '@tabler/icons-react';
+import { Table, ScrollArea, Pagination, Button, ActionIcon, Modal, Group, Text, Title, TextInput, Stack, List } from '@mantine/core';
+import { IconTrash, IconSearch, IconPlus } from '@tabler/icons-react';
 import { useTranslation } from 'react-i18next';
 
-import { getVocabulary, deleteWord, Vocabulary as VocabularyType } from '@repo/database';
+import { getVocabulary, deleteWord, addWord, Vocabulary as VocabularyType } from '@repo/database';
 import { useEffect, useState } from 'react';
 import { getConfig, llmLink, getLookupPrompt } from '@repo/config';
 
@@ -45,6 +45,10 @@ export function Vocabulary() {
     const itemsPerPage = 10;
     const [confirmOpen, setConfirmOpen] = useState(false);
     const [pendingDeleteId, setPendingDeleteId] = useState<string | null>(null);
+    const [addOpen, setAddOpen] = useState(false);
+    const [addWordValue, setAddWordValue] = useState('');
+    const [addUrlValue, setAddUrlValue] = useState('');
+    const [addWordError, setAddWordError] = useState('');
 
     const refresh = () => getVocabulary().then(setVocabulary);
 
@@ -86,6 +90,35 @@ export function Vocabulary() {
         setPendingDeleteId(null);
     };
 
+    const handleOpenAdd = () => {
+        setAddWordValue('');
+        setAddUrlValue('');
+        setAddWordError('');
+        setAddOpen(true);
+    };
+
+    const handleCloseAdd = () => {
+        setAddOpen(false);
+        setAddWordError('');
+    };
+
+    const handleConfirmAdd = async () => {
+        const word = addWordValue.trim();
+        const url = addUrlValue.trim();
+        const wordMissing = !word;
+        setAddWordError(wordMissing ? t('app.vocabulary.add.word_required') : '');
+        if (wordMissing) return;
+        await addWord({
+            id: crypto.randomUUID(),
+            word,
+            url: url || '',
+            createdAt: new Date(),
+            updatedAt: new Date()
+        });
+        setAddOpen(false);
+        refresh();
+    };
+
     const handleExport = async () => {
         const all = await getVocabulary();
         const csv = vocabularyToCsvRows(all);
@@ -97,9 +130,11 @@ export function Vocabulary() {
         <Table.Tr key={vocab.id}>
             <Table.Td>{vocab.word}</Table.Td>
             <Table.Td>
-                <a href={vocab.url} target="_blank" rel="noreferrer">
-                    {t('app.to')}
-                </a>
+                {vocab.url ? (
+                    <a href={vocab.url} target="_blank" rel="noreferrer">
+                        {t('app.to')}
+                    </a>
+                ) : null}
             </Table.Td>
             <Table.Td>
                 <ActionIcon
@@ -126,9 +161,47 @@ export function Vocabulary() {
 
     return (
         <>
-            <Button variant="light" size="sm" mb="md" onClick={handleExport}>
-                {t('app.vocabulary.export')}
-            </Button>
+            <Group mb="md" gap="xs">
+                <Button variant="filled" size="sm" leftSection={<IconPlus size={16} />} onClick={handleOpenAdd}>
+                    {t('app.vocabulary.add.button')}
+                </Button>
+                <Button variant="light" size="sm" onClick={handleExport}>
+                    {t('app.vocabulary.export')}
+                </Button>
+            </Group>
+            <Modal
+                opened={addOpen}
+                onClose={handleCloseAdd}
+                title={t('app.vocabulary.add.title')}
+                centered
+            >
+                <Stack gap="sm">
+                    <TextInput
+                        label={t('app.vocabulary.add.word_label')}
+                        placeholder={t('app.vocabulary.add.word_label')}
+                        value={addWordValue}
+                        onChange={(e) => {
+                            setAddWordValue(e.currentTarget.value);
+                            setAddWordError('');
+                        }}
+                        error={addWordError}
+                    />
+                    <TextInput
+                        label={t('app.vocabulary.add.url_label')}
+                        placeholder={t('app.vocabulary.add.url_label')}
+                        value={addUrlValue}
+                        onChange={(e) => setAddUrlValue(e.currentTarget.value)}
+                    />
+                    <Group justify="flex-end">
+                        <Button variant="default" size="xs" onClick={handleCloseAdd}>
+                            {t('app.vocabulary.add.cancel')}
+                        </Button>
+                        <Button size="xs" onClick={handleConfirmAdd}>
+                            {t('app.vocabulary.add.confirm')}
+                        </Button>
+                    </Group>
+                </Stack>
+            </Modal>
             <Modal
                 opened={confirmOpen}
                 onClose={handleCancelDelete}
@@ -160,9 +233,14 @@ export function Vocabulary() {
                             <Table.Tbody>{rows}</Table.Tbody>
                         ) :
                             <Table.Tbody><Table.Tr>
-                                <Table.Td colSpan={4} ta='center'>
-                                    <p><Title order={3}>{t('app.vocabulary.table.no_data')}</Title></p>
-                                    <p><Text>{t('app.vocabulary.table.no_data_hint')}</Text></p>
+                                <Table.Td colSpan={4}>
+                                    <Stack gap="sm" pt="md">
+                                        <Title order={3} ta="center">{t('app.vocabulary.table.no_data')}</Title>
+                                        <List type="ordered" spacing="xs">
+                                            <List.Item><Text size="sm">{t('app.vocabulary.table.no_data_hint1')}</Text></List.Item>
+                                            <List.Item><Text size="sm">{t('app.vocabulary.table.no_data_hint2')}</Text></List.Item>
+                                        </List>
+                                    </Stack>
                                 </Table.Td>
                             </Table.Tr></Table.Tbody>
                     }

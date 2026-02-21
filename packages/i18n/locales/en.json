@@ -28,10 +28,10 @@
                 }
             },
             "new_tab": {
-                "label": "Open in New Tab after right click the highlighted text",
+                "label": "Action after right click the highlighted text",
                 "placeholder": "Pick one",
-                "yes": "Yes",
-                "no": "No"
+                "record": "Record",
+                "record_and_lookup": "Record and Lookup"
             },
             "treat_as": {
                 "label": "Treat the words as",
@@ -53,20 +53,31 @@
         },
         "vocabulary": {
             "title": "Vocabulary List",
-            "export": "Export to CSV",
+            "export": "Export",
             "table": {
                 "word": "Word",
                 "url": "Link",
                 "lookup": "Lookup",
                 "remove": "Remove",
                 "no_data": "No data.",
-                "no_data_hint": "Please right click any highlighted word in any webpage and select \"Record and Lookup\"."
+                "no_data_hint1": "Please use the \"Add Word\" button to add a word.",
+                "no_data_hint2": "Please right click any highlighted word in any webpage and select \"Record and Lookup\"."
             },
             "delete": {
                 "title": "Delete word",
                 "confirm_message": "Delete this word from your list?",
                 "cancel": "Cancel",
                 "confirm": "Delete"
+            },
+            "add": {
+                "button": "Word",
+                "title": "Add Word",
+                "word_label": "Word",
+                "url_label": "URL",
+                "confirm": "Add",
+                "cancel": "Cancel",
+                "word_required": "Word is required",
+                "url_required": "URL is required"
             }
         },
         "common": {
