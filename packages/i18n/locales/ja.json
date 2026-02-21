@@ -60,6 +60,7 @@
                 "word": "単語",
                 "url": "リンク",
                 "lookup": "検索",
+                "edit": "編集",
                 "remove": "削除",
                 "no_data": "データがありません。",
                 "no_data_hint1": "「単語を追加」ボタンで単語を追加してください。",
@@ -80,6 +81,14 @@
                 "cancel": "キャンセル",
                 "word_required": "単語を入力してください",
                 "url_required": "URLを入力してください"
+            },
+            "edit": {
+                "title": "単語を編集",
+                "word_label": "単語",
+                "url_label": "URL",
+                "confirm": "保存",
+                "cancel": "キャンセル",
+                "word_required": "単語を入力してください"
             }
         },
         "common": {

@@ -60,6 +60,7 @@
                 "word": "單字",
                 "url": "連結",
                 "lookup": "查詢",
+                "edit": "編輯",
                 "remove": "刪除",
                 "no_data": "沒有資料",
                 "no_data_hint1": "請用右上角的新增單字功能，新增一個單字",
@@ -80,6 +81,14 @@
                 "cancel": "取消",
                 "word_required": "請輸入單字",
                 "url_required": "請輸入網址"
+            },
+            "edit": {
+                "title": "編輯單字",
+                "word_label": "單字",
+                "url_label": "網址",
+                "confirm": "儲存",
+                "cancel": "取消",
+                "word_required": "請輸入單字"
             }
         },
         "common": {

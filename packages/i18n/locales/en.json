@@ -60,6 +60,7 @@
                 "word": "Word",
                 "url": "Link",
                 "lookup": "Lookup",
+                "edit": "Edit",
                 "remove": "Remove",
                 "no_data": "No data.",
                 "no_data_hint1": "Please use the \"Add Word\" button to add a word.",
@@ -80,6 +81,14 @@
                 "cancel": "Cancel",
                 "word_required": "Word is required",
                 "url_required": "URL is required"
+            },
+            "edit": {
+                "title": "Edit word",
+                "word_label": "Word",
+                "url_label": "URL",
+                "confirm": "Save",
+                "cancel": "Cancel",
+                "word_required": "Word is required"
             }
         },
         "common": {
