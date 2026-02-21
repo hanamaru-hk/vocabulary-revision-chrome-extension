@@ -69,11 +69,13 @@
                 "confirm": "Delete"
             },
             "add": {
-                "title": "Add vocabulary",
+                "title": "Word",
                 "word_label": "Word",
                 "url_label": "URL",
                 "confirm": "Add",
-                "cancel": "Cancel"
+                "cancel": "Cancel",
+                "word_required": "Word is required",
+                "url_required": "URL is required"
             }
         },
         "common": {

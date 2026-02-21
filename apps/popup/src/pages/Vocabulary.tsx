@@ -48,6 +48,8 @@ export function Vocabulary() {
     const [addOpen, setAddOpen] = useState(false);
     const [addWordValue, setAddWordValue] = useState('');
     const [addUrlValue, setAddUrlValue] = useState('');
+    const [addWordError, setAddWordError] = useState('');
+    const [addUrlError, setAddUrlError] = useState('');
 
     const refresh = () => getVocabulary().then(setVocabulary);
 
@@ -92,21 +94,29 @@ export function Vocabulary() {
     const handleOpenAdd = () => {
         setAddWordValue('');
         setAddUrlValue('');
+        setAddWordError('');
+        setAddUrlError('');
         setAddOpen(true);
     };
 
     const handleCloseAdd = () => {
         setAddOpen(false);
+        setAddWordError('');
+        setAddUrlError('');
     };
 
     const handleConfirmAdd = async () => {
         const word = addWordValue.trim();
         const url = addUrlValue.trim();
-        if (!word) return;
+        const wordMissing = !word;
+        const urlMissing = !url;
+        setAddWordError(wordMissing ? t('app.vocabulary.add.word_required') : '');
+        setAddUrlError(urlMissing ? t('app.vocabulary.add.url_required') : '');
+        if (wordMissing || urlMissing) return;
         await addWord({
             id: crypto.randomUUID(),
             word,
-            url: url || '',
+            url,
             createdAt: new Date(),
             updatedAt: new Date()
         });
@@ -155,11 +165,11 @@ export function Vocabulary() {
     return (
         <>
             <Group mb="md" gap="xs">
-                <Button variant="light" size="sm" onClick={handleExport}>
-                    {t('app.vocabulary.export')}
-                </Button>
                 <Button variant="filled" size="sm" leftSection={<IconPlus size={16} />} onClick={handleOpenAdd}>
                     {t('app.vocabulary.add.title')}
+                </Button>
+                <Button variant="light" size="sm" onClick={handleExport}>
+                    {t('app.vocabulary.export')}
                 </Button>
             </Group>
             <Modal
@@ -173,19 +183,27 @@ export function Vocabulary() {
                         label={t('app.vocabulary.add.word_label')}
                         placeholder={t('app.vocabulary.add.word_label')}
                         value={addWordValue}
-                        onChange={(e) => setAddWordValue(e.currentTarget.value)}
+                        onChange={(e) => {
+                            setAddWordValue(e.currentTarget.value);
+                            setAddWordError('');
+                        }}
+                        error={addWordError}
                     />
                     <TextInput
                         label={t('app.vocabulary.add.url_label')}
                         placeholder={t('app.vocabulary.add.url_label')}
                         value={addUrlValue}
-                        onChange={(e) => setAddUrlValue(e.currentTarget.value)}
+                        onChange={(e) => {
+                            setAddUrlValue(e.currentTarget.value);
+                            setAddUrlError('');
+                        }}
+                        error={addUrlError}
                     />
                     <Group justify="flex-end">
                         <Button variant="default" size="xs" onClick={handleCloseAdd}>
                             {t('app.vocabulary.add.cancel')}
                         </Button>
-                        <Button size="xs" onClick={handleConfirmAdd} disabled={!addWordValue.trim()}>
+                        <Button size="xs" onClick={handleConfirmAdd}>
                             {t('app.vocabulary.add.confirm')}
                         </Button>
                     </Group>

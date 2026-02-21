@@ -69,11 +69,13 @@
                 "confirm": "刪除"
             },
             "add": {
-                "title": "新增單字",
+                "title": "單字",
                 "word_label": "單字",
                 "url_label": "網址",
                 "confirm": "新增",
-                "cancel": "取消"
+                "cancel": "取消",
+                "word_required": "請輸入單字",
+                "url_required": "請輸入網址"
             }
         },
         "common": {
