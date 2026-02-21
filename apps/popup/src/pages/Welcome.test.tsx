@@ -20,7 +20,7 @@ vi.mock('@repo/config', () => ({
 }));
 
 // Mock the image asset (not available in jsdom)
-vi.mock('../../../manifest/word-notebook.jpg', () => ({ default: 'word-notebook.jpg' }));
+vi.mock('../../../manifest/word-notebook.webp', () => ({ default: 'word-notebook.webp' }));
 
 // Mock react-i18next
 vi.mock('react-i18next', () => ({

@@ -2,7 +2,7 @@ import { Button, Center, Container, Select, Title, Stack, Image, ScrollArea } fr
 import { useTranslation } from 'react-i18next';
 import { defaultConfig, setConfig } from '@repo/config';
 import { useNavigate } from 'react-router-dom';
-import wordNotebook from '../../../manifest/word-notebook.jpg';
+import wordNotebook from '../../../manifest/word-notebook.webp';
 
 export function Welcome() {
     const { t, i18n } = useTranslation();
