@@ -62,9 +62,9 @@
                 "lookup": "Lookup",
                 "edit": "Edit",
                 "remove": "Remove",
-                "no_data": "No data.",
-                "no_data_hint1": "Please use the \"Add Word\" button to add a word.",
-                "no_data_hint2": "Please right click any highlighted word in any webpage and select \"Record and Lookup\"."
+                "no_data": "No data yet.",
+                "no_data_hint1": "Use the \"Add Word\" button above to add a word.",
+                "no_data_hint2": "Or right-click any highlighted word on a webpage and select \"Record and Lookup\"."
             },
             "delete": {
                 "title": "Delete word",
