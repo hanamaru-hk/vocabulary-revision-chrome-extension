@@ -5,7 +5,9 @@
         "title": "大家的生字簿",
         "nav": {
             "vocabulary": "單字列表",
-            "settings": "設定"
+            "settings": "設定",
+            "data": "資料儲存",
+            "about": "關於"
         },
         "settings": {
             "title": "設定",

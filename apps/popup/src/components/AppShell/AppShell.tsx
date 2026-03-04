@@ -1,6 +1,6 @@
 import { ActionIcon, AppShell, Burger, Group, NavLink, Title, Drawer } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { IconSettings, IconBook, IconX, IconRefresh, IconInfoCircle } from '@tabler/icons-react';
+import { IconSettings, IconBook, IconX, IconDatabase, IconInfoCircle } from '@tabler/icons-react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
@@ -13,7 +13,7 @@ export function ApplicationShell({ children, showHeader = true }: { children: Re
     const links = [
         { icon: IconBook, label: t('app.nav.vocabulary'), to: '/vocabulary' },
         { icon: IconSettings, label: t('app.nav.settings'), to: '/settings' },
-        { icon: IconRefresh, label: t('app.nav.reset'), to: '/reset' },
+        { icon: IconDatabase, label: t('app.nav.data'), to: '/data' },
         { icon: IconInfoCircle, label: t('app.nav.about'), to: '/about' },
     ];
 
