@@ -1,103 +1,108 @@
 {
-    "from": "來源",
-    "to": "目標",
-    "app": {
-        "title": "大家的生字簿",
-        "nav": {
-            "vocabulary": "單字列表",
-            "settings": "設定"
-        },
-        "settings": {
-            "title": "設定",
-            "language": {
-                "label": "Language/語言",
-                "placeholder": "Pick one/選擇語言",
-                "current": "Current Language/當前語言: {{lng}}",
-                "name": {
-                    "en": "English",
-                    "zh-HK": "繁體中文(香港)",
-                    "zh-TW": "繁體中文(台灣)",
-                    "ja": "日本語"
-                }
-            },
-            "llm": {
-                "label": "查詢使用",
-                "placeholder": "請選擇",
-                "name": {
-                    "perplexity": "Perplexity",
-                    "googleAI": "Google（AI 摘要）"
-                }
-            },
-            "new_tab": {
-                "label": "右鍵點擊高亮的單字後的動作",
-                "placeholder": "請選擇",
-                "record": "記錄",
-                "record_and_lookup": "記錄並查詢"
-            },
-            "treat_as": {
-                "label": "將生字視為",
-                "placeholder": "請選擇",
-                "japanese": "日文",
-                "not_specified": "沒有指定"
-            },
-            "reset": {
-                "button": "恢復預設設定",
-                "title": "重置設定？",
-                "confirm": "確定要將所有設定恢復為預設值嗎？ 確定後將回到初始安裝狀態！！！",
-                "cancel": "取消",
-                "confirm_button": "重置"
-            }
-        },
-        "welcome": {
-            "title": "歡迎",
-            "confirm": "開始"
-        },
-        "vocabulary": {
-            "title": "單字列表",
-            "export": "匯出",
-            "table": {
-                "word": "單字",
-                "url": "連結",
-                "lookup": "查詢",
-                "edit": "編輯",
-                "remove": "刪除",
-                "no_data": "暫時沒有資料。",
-                "no_data_hint1": "請使用上方的「新增單字」按鈕新增單字。",
-                "no_data_hint2": "或在任何網頁上右鍵點擊高亮的單字，然後選擇「記錄並查詢」。"
-            },
-            "delete": {
-                "title": "刪除單字",
-                "confirm_message": "確定要從列表中刪除此單字？",
-                "cancel": "取消",
-                "confirm": "刪除"
-            },
-            "add": {
-                "button": "單字",
-                "title": "新增單字",
-                "word_label": "單字",
-                "url_label": "網址 (非必需)",
-                "confirm": "新增",
-                "cancel": "取消",
-                "word_required": "請輸入單字",
-                "url_required": "請輸入網址"
-            },
-            "edit": {
-                "title": "編輯單字",
-                "word_label": "單字",
-                "url_label": "網址",
-                "confirm": "儲存",
-                "cancel": "取消",
-                "word_required": "請輸入單字"
-            }
-        },
-        "common": {
-            "menu": "選單",
-            "context_menu_record": "記錄 \"%s\"",
-            "context_menu_lookup": "記錄並查詢 \"%s\"",
-            "prompt_lookup": "「{{word}}」的中文意思是什麼？",
-            "prompt_focus": "若該詞屬於{{language}}，請以{{language}}詞彙進行解釋（即使它在其他語言中也存在），並附上讀音。如不是，請忽略。",
-            "prompt_detail": "用這個詞和它所屬的語言寫一篇例文。"
-        },
-        "to": "網址"
-    }
+  "from": "來源",
+  "to": "目標",
+  "app": {
+    "title": "大家的生字簿",
+    "nav": {
+      "vocabulary": "單字列表",
+      "settings": "設定",
+      "data": "數據儲存",
+      "about": "關於",
+      "disclaimer": "免責：本擴展為免費及開源軟件，僅供教育及個人學習使用，使用者需自行承擔使用風險。",
+      "copyright": "© {{year}}",
+      "owner": "花丸日本語教室"
+    },
+    "settings": {
+      "title": "設定",
+      "language": {
+        "label": "Language/語言",
+        "placeholder": "Pick one/選擇語言",
+        "current": "Current Language/當前語言: {{lng}}",
+        "name": {
+          "en": "English",
+          "zh-HK": "繁體中文(香港)",
+          "zh-TW": "繁體中文(台灣)",
+          "ja": "日本語"
+        }
+      },
+      "llm": {
+        "label": "查詢使用",
+        "placeholder": "請選擇",
+        "name": {
+          "perplexity": "Perplexity",
+          "googleAI": "Google（AI 摘要）"
+        }
+      },
+      "new_tab": {
+        "label": "右鍵點擊高亮的單字後的動作",
+        "placeholder": "請選擇",
+        "record": "記錄",
+        "record_and_lookup": "記錄並查詢"
+      },
+      "treat_as": {
+        "label": "將生字視為",
+        "placeholder": "請選擇",
+        "japanese": "日文",
+        "not_specified": "沒有指定"
+      },
+      "reset": {
+        "button": "恢復預設設定",
+        "title": "重置設定？",
+        "confirm": "確定要將所有設定恢復為預設值嗎？ 確定後將回到初始安裝狀態！！！",
+        "cancel": "取消",
+        "confirm_button": "重置"
+      }
+    },
+    "welcome": {
+      "title": "歡迎",
+      "confirm": "開始"
+    },
+    "vocabulary": {
+      "title": "單字列表",
+      "export": "匯出",
+      "table": {
+        "word": "單字",
+        "url": "連結",
+        "lookup": "查詢",
+        "edit": "編輯",
+        "remove": "刪除",
+        "no_data": "暫時沒有資料。",
+        "no_data_hint1": "請使用上方的「新增單字」按鈕新增單字。",
+        "no_data_hint2": "或在任何網頁上右鍵點擊高亮的單字，然後選擇「記錄並查詢」。"
+      },
+      "delete": {
+        "title": "刪除單字",
+        "confirm_message": "確定要從列表中刪除此單字？",
+        "cancel": "取消",
+        "confirm": "刪除"
+      },
+      "add": {
+        "button": "單字",
+        "title": "新增單字",
+        "word_label": "單字",
+        "url_label": "網址 (非必需)",
+        "confirm": "新增",
+        "cancel": "取消",
+        "word_required": "請輸入單字",
+        "url_required": "請輸入網址"
+      },
+      "edit": {
+        "title": "編輯單字",
+        "word_label": "單字",
+        "url_label": "網址",
+        "confirm": "儲存",
+        "cancel": "取消",
+        "word_required": "請輸入單字"
+      }
+    },
+    "common": {
+      "menu": "選單",
+      "context_menu_record": "記錄 \"%s\"",
+      "context_menu_lookup": "記錄並查詢 \"%s\"",
+      "prompt_lookup": "「{{word}}」的中文意思是什麼？",
+      "prompt_focus": "若該詞屬於{{language}}，請以{{language}}詞彙進行解釋（即使它在其他語言中也存在），並附上讀音。如不是，請忽略。",
+      "prompt_detail": "用這個詞和它所屬的語言寫一篇例文。"
+    },
+    "to": "網址"
+  }
 }

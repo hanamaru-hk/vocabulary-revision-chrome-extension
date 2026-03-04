@@ -1,103 +1,108 @@
 {
-    "from": "from",
-    "to": "to",
-    "app": {
-        "title": "Everyone's Word Notebook",
-        "nav": {
-            "vocabulary": "Vocabulary List",
-            "settings": "Settings"
-        },
-        "settings": {
-            "title": "Settings",
-            "language": {
-                "label": "Language/語言",
-                "placeholder": "Pick one/選擇語言",
-                "current": "Current Language/當前語言: {{lng}}",
-                "name": {
-                    "en": "English",
-                    "zh-HK": "繁體中文(香港)",
-                    "zh-TW": "繁體中文(台灣)",
-                    "ja": "日本語"
-                }
-            },
-            "llm": {
-                "label": "Lookup with",
-                "placeholder": "Pick one",
-                "name": {
-                    "perplexity": "Perplexity",
-                    "googleAI": "Google (AI overview)"
-                }
-            },
-            "new_tab": {
-                "label": "Action after right click the highlighted text",
-                "placeholder": "Pick one",
-                "record": "Record",
-                "record_and_lookup": "Record and Lookup"
-            },
-            "treat_as": {
-                "label": "Treat the words as",
-                "placeholder": "Pick one",
-                "japanese": "Japanese",
-                "not_specified": "Not Specified"
-            },
-            "reset": {
-                "button": "Reset to Default",
-                "title": "Reset settings?",
-                "confirm": "Are you sure you want to reset all settings to default? After reset, the extension will be restored to the initial installation state",
-                "cancel": "Cancel",
-                "confirm_button": "Reset"
-            }
-        },
-        "welcome": {
-            "title": "Welcome",
-            "confirm": "Start"
-        },
-        "vocabulary": {
-            "title": "Vocabulary List",
-            "export": "Export",
-            "table": {
-                "word": "Word",
-                "url": "Link",
-                "lookup": "Lookup",
-                "edit": "Edit",
-                "remove": "Remove",
-                "no_data": "No data yet.",
-                "no_data_hint1": "Use the \"Add Word\" button above to add a word.",
-                "no_data_hint2": "Or right-click any highlighted word on a webpage and select \"Record and Lookup\"."
-            },
-            "delete": {
-                "title": "Delete word",
-                "confirm_message": "Delete this word from your list?",
-                "cancel": "Cancel",
-                "confirm": "Delete"
-            },
-            "add": {
-                "button": "Word",
-                "title": "Add Word",
-                "word_label": "Word",
-                "url_label": "URL (Optional)",
-                "confirm": "Add",
-                "cancel": "Cancel",
-                "word_required": "Word is required",
-                "url_required": "URL is required"
-            },
-            "edit": {
-                "title": "Edit word",
-                "word_label": "Word",
-                "url_label": "URL",
-                "confirm": "Save",
-                "cancel": "Cancel",
-                "word_required": "Word is required"
-            }
-        },
-        "common": {
-            "menu": "Menu",
-            "context_menu_record": "Record \"%s\"",
-            "context_menu_lookup": "Record and lookup \"%s\"",
-            "prompt_lookup": "What does \"{{word}}\" mean in English?",
-            "prompt_focus": "If this word belongs to {{language}}, interpret it as {{language}} and include its reading, even if it exists in other languages. If not, then skip.",
-            "prompt_detail": "Use this word and its language to make a sample essay."
-        },
-        "to": "url"
-    }
+  "from": "from",
+  "to": "to",
+  "app": {
+    "title": "Everyone's Word Notebook",
+    "nav": {
+      "vocabulary": "Vocabulary List",
+      "settings": "Settings",
+      "data": "Data",
+      "about": "About",
+      "disclaimer": "Disclaimer: This extension is free and open source software, provided as-is for educational and personal use only. Users assume all risks.",
+      "copyright": "© {{year}}",
+      "owner": "Hanamaru Company Limited"
+    },
+    "settings": {
+      "title": "Settings",
+      "language": {
+        "label": "Language/語言",
+        "placeholder": "Pick one/選擇語言",
+        "current": "Current Language/當前語言: {{lng}}",
+        "name": {
+          "en": "English",
+          "zh-HK": "繁體中文(香港)",
+          "zh-TW": "繁體中文(台灣)",
+          "ja": "日本語"
+        }
+      },
+      "llm": {
+        "label": "Lookup with",
+        "placeholder": "Pick one",
+        "name": {
+          "perplexity": "Perplexity",
+          "googleAI": "Google (AI overview)"
+        }
+      },
+      "new_tab": {
+        "label": "Action after right click the highlighted text",
+        "placeholder": "Pick one",
+        "record": "Record",
+        "record_and_lookup": "Record and Lookup"
+      },
+      "treat_as": {
+        "label": "Treat the words as",
+        "placeholder": "Pick one",
+        "japanese": "Japanese",
+        "not_specified": "Not Specified"
+      },
+      "reset": {
+        "button": "Reset to Default",
+        "title": "Reset settings?",
+        "confirm": "Are you sure you want to reset all settings to default? After reset, the extension will be restored to the initial installation state",
+        "cancel": "Cancel",
+        "confirm_button": "Reset"
+      }
+    },
+    "welcome": {
+      "title": "Welcome",
+      "confirm": "Start"
+    },
+    "vocabulary": {
+      "title": "Vocabulary List",
+      "export": "Export",
+      "table": {
+        "word": "Word",
+        "url": "Link",
+        "lookup": "Lookup",
+        "edit": "Edit",
+        "remove": "Remove",
+        "no_data": "No data yet.",
+        "no_data_hint1": "Use the \"Add Word\" button above to add a word.",
+        "no_data_hint2": "Or right-click any highlighted word on a webpage and select \"Record and Lookup\"."
+      },
+      "delete": {
+        "title": "Delete word",
+        "confirm_message": "Delete this word from your list?",
+        "cancel": "Cancel",
+        "confirm": "Delete"
+      },
+      "add": {
+        "button": "Word",
+        "title": "Add Word",
+        "word_label": "Word",
+        "url_label": "URL (Optional)",
+        "confirm": "Add",
+        "cancel": "Cancel",
+        "word_required": "Word is required",
+        "url_required": "URL is required"
+      },
+      "edit": {
+        "title": "Edit word",
+        "word_label": "Word",
+        "url_label": "URL",
+        "confirm": "Save",
+        "cancel": "Cancel",
+        "word_required": "Word is required"
+      }
+    },
+    "common": {
+      "menu": "Menu",
+      "context_menu_record": "Record \"%s\"",
+      "context_menu_lookup": "Record and lookup \"%s\"",
+      "prompt_lookup": "What does \"{{word}}\" mean in English?",
+      "prompt_focus": "If this word belongs to {{language}}, interpret it as {{language}} and include its reading, even if it exists in other languages. If not, then skip.",
+      "prompt_detail": "Use this word and its language to make a sample essay."
+    },
+    "to": "url"
+  }
 }

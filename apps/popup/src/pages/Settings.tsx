@@ -1,8 +1,6 @@
-import { Container, Title, Select, Button, Modal, Group, Text, ScrollArea } from '@mantine/core';
+import { Title, Select, ScrollArea } from '@mantine/core';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
-
-import { defaultConfig, getConfig, setConfig, LLMType } from '@repo/config';
+import { getConfig, setConfig, LLMType } from '@repo/config';
 import { useEffect, useState } from 'react';
 
 const LLM_OPTIONS = [
@@ -12,11 +10,9 @@ const LLM_OPTIONS = [
 
 export function Settings() {
     const { t, i18n } = useTranslation();
-    const navigate = useNavigate();
     const [llm, setLlm] = useState<string>(LLMType.perplexity);
     const [openInNewTab, setOpenInNewTab] = useState<string>('true');
     const [treatAs, setTreatAs] = useState<string>('false');
-    const [resetModalOpen, setResetModalOpen] = useState(false);
 
     useEffect(() => {
         getConfig().then((config) => {
@@ -52,17 +48,6 @@ export function Settings() {
         const config = await getConfig();
         await setConfig({ ...config, treatAs: value || '' });
     };
-
-    const handleResetClick = () => setResetModalOpen(true);
-
-    const handleResetConfirm = async () => {
-        await setConfig(defaultConfig);
-        await i18n.changeLanguage(defaultConfig.language);
-        setResetModalOpen(false);
-        navigate('/');
-    };
-
-    const handleResetCancel = () => setResetModalOpen(false);
 
     return (
         <ScrollArea>
@@ -104,33 +89,6 @@ export function Settings() {
                 value={treatAs}
                 onChange={handleWordsAsJapaneseChange}
             />
-
-            <Modal
-                opened={resetModalOpen}
-                onClose={handleResetCancel}
-                title={t('app.settings.reset.title')}
-                centered
-            >
-                <Text mb="sm">{t('app.settings.reset.confirm')}</Text>
-                <Group justify="flex-end">
-                    <Button variant="default" size="xs" onClick={handleResetCancel}>
-                        {t('app.settings.reset.cancel')}
-                    </Button>
-                    <Button color="red" size="xs" onClick={handleResetConfirm}>
-                        {t('app.settings.reset.confirm_button')}
-                    </Button>
-                </Group>
-            </Modal>
-
-            <Button
-                mt="xl"
-                color="red"
-                variant="outline"
-                fullWidth
-                onClick={handleResetClick}
-            >
-                {t('app.settings.reset.button')}
-            </Button>
         </ScrollArea>
     );
 }

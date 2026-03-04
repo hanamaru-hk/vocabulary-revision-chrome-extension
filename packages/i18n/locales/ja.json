@@ -1,103 +1,108 @@
 {
-    "from": "から",
-    "to": "へ",
-    "app": {
-        "title": "みんなの単語ノート",
-        "nav": {
-            "vocabulary": "単語リスト",
-            "settings": "設定"
-        },
-        "settings": {
-            "title": "設定",
-            "language": {
-                "label": "Language/言語",
-                "placeholder": "選択してください",
-                "current": "現在の言語: {{lng}}",
-                "name": {
-                    "en": "English",
-                    "zh-HK": "繁體中文(香港)",
-                    "zh-TW": "繁體中文(台灣)",
-                    "ja": "日本語"
-                }
-            },
-            "llm": {
-                "label": "検索に使用",
-                "placeholder": "選択してください",
-                "name": {
-                    "perplexity": "Perplexity",
-                    "googleAI": "Google（AI概要）"
-                }
-            },
-            "new_tab": {
-                "label": "ハイライトした文字を右クリック後の動作",
-                "placeholder": "選択してください",
-                "record": "記録",
-                "record_and_lookup": "記録して検索"
-            },
-            "treat_as": {
-                "label": "単語を次の言語として扱う",
-                "placeholder": "選択してください",
-                "japanese": "日本語",
-                "not_specified": "指定なし"
-            },
-            "reset": {
-                "button": "初期設定に戻す",
-                "title": "設定をリセットしますか？",
-                "confirm": "すべての設定を初期値に戻してもよろしいですか？ リセット後、拡張機能は初期インストール状態に戻ります。",
-                "cancel": "キャンセル",
-                "confirm_button": "リセット"
-            }
-        },
-        "welcome": {
-            "title": "ようこそ",
-            "confirm": "始める"
-        },
-        "vocabulary": {
-            "title": "単語リスト",
-            "export": "エクスポート",
-            "table": {
-                "word": "単語",
-                "url": "リンク",
-                "lookup": "検索",
-                "edit": "編集",
-                "remove": "削除",
-                "no_data": "まだデータがありません。",
-                "no_data_hint1": "上の「単語を追加」ボタンで単語を追加してください。",
-                "no_data_hint2": "または、ウェブページでハイライトした単語を右クリックし、「記録して検索」を選択してください。"
-            },
-            "delete": {
-                "title": "単語を削除",
-                "confirm_message": "リストからこの単語を削除しますか？",
-                "cancel": "キャンセル",
-                "confirm": "削除"
-            },
-            "add": {
-                "button": "単語",
-                "title": "単語を追加",
-                "word_label": "単語",
-                "url_label": "URL (任意)",
-                "confirm": "追加",
-                "cancel": "キャンセル",
-                "word_required": "単語を入力してください",
-                "url_required": "URLを入力してください"
-            },
-            "edit": {
-                "title": "単語を編集",
-                "word_label": "単語",
-                "url_label": "URL",
-                "confirm": "保存",
-                "cancel": "キャンセル",
-                "word_required": "単語を入力してください"
-            }
-        },
-        "common": {
-            "menu": "メニュー",
-            "context_menu_record": "「%s」を記録",
-            "context_menu_lookup": "「%s」を記録して検索",
-            "prompt_lookup": "「{{word}}」の意味を教えてください。",
-            "prompt_focus": "この単語が{{language}}に属する場合は、{{language}}として解釈し、読み方を含めてください。他の言語にも存在する場合でも同様です。該当しない場合は省略してください。",
-            "prompt_detail": "この単語とその言語で例文を作成してください。"
-        },
-        "to": "URL"
-    }
+  "from": "から",
+  "to": "へ",
+  "app": {
+    "title": "みんなの単語ノート",
+    "nav": {
+      "vocabulary": "単語リスト",
+      "settings": "設定",
+      "data": "データ",
+      "about": "について",
+      "disclaimer": "免責事項：当拡張機能は無料のオープンソースソフトウェアであり、教育および個人的な使用目的として提供されています。使用者は自己責任で使用してください。",
+      "copyright": "© {{year}}",
+      "owner": "花丸日本語教室"
+    },
+    "settings": {
+      "title": "設定",
+      "language": {
+        "label": "Language/言語",
+        "placeholder": "選択してください",
+        "current": "現在の言語: {{lng}}",
+        "name": {
+          "en": "English",
+          "zh-HK": "繁體中文(香港)",
+          "zh-TW": "繁體中文(台灣)",
+          "ja": "日本語"
+        }
+      },
+      "llm": {
+        "label": "検索に使用",
+        "placeholder": "選択してください",
+        "name": {
+          "perplexity": "Perplexity",
+          "googleAI": "Google（AI概要）"
+        }
+      },
+      "new_tab": {
+        "label": "ハイライトした文字を右クリック後の動作",
+        "placeholder": "選択してください",
+        "record": "記録",
+        "record_and_lookup": "記録して検索"
+      },
+      "treat_as": {
+        "label": "単語を次の言語として扱う",
+        "placeholder": "選択してください",
+        "japanese": "日本語",
+        "not_specified": "指定なし"
+      },
+      "reset": {
+        "button": "初期設定に戻す",
+        "title": "設定をリセットしますか？",
+        "confirm": "すべての設定を初期値に戻してもよろしいですか？ リセット後、拡張機能は初期インストール状態に戻ります。",
+        "cancel": "キャンセル",
+        "confirm_button": "リセット"
+      }
+    },
+    "welcome": {
+      "title": "ようこそ",
+      "confirm": "始める"
+    },
+    "vocabulary": {
+      "title": "単語リスト",
+      "export": "エクスポート",
+      "table": {
+        "word": "単語",
+        "url": "リンク",
+        "lookup": "検索",
+        "edit": "編集",
+        "remove": "削除",
+        "no_data": "まだデータがありません。",
+        "no_data_hint1": "上の「単語を追加」ボタンで単語を追加してください。",
+        "no_data_hint2": "または、ウェブページでハイライトした単語を右クリックし、「記録して検索」を選択してください。"
+      },
+      "delete": {
+        "title": "単語を削除",
+        "confirm_message": "リストからこの単語を削除しますか？",
+        "cancel": "キャンセル",
+        "confirm": "削除"
+      },
+      "add": {
+        "button": "単語",
+        "title": "単語を追加",
+        "word_label": "単語",
+        "url_label": "URL (任意)",
+        "confirm": "追加",
+        "cancel": "キャンセル",
+        "word_required": "単語を入力してください",
+        "url_required": "URLを入力してください"
+      },
+      "edit": {
+        "title": "単語を編集",
+        "word_label": "単語",
+        "url_label": "URL",
+        "confirm": "保存",
+        "cancel": "キャンセル",
+        "word_required": "単語を入力してください"
+      }
+    },
+    "common": {
+      "menu": "メニュー",
+      "context_menu_record": "「%s」を記録",
+      "context_menu_lookup": "「%s」を記録して検索",
+      "prompt_lookup": "「{{word}}」の意味を教えてください。",
+      "prompt_focus": "この単語が{{language}}に属する場合は、{{language}}として解釈し、読み方を含めてください。他の言語にも存在する場合でも同様です。該当しない場合は省略してください。",
+      "prompt_detail": "この単語とその言語で例文を作成してください。"
+    },
+    "to": "URL"
+  }
 }

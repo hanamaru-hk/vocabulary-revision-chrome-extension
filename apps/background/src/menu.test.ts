@@ -48,7 +48,7 @@ describe('addMenuEventListeners', () => {
         };
         addMenuEventListeners(asI18n(i18nMock));
 
-        const storageListener = vi.mocked(chrome.storage.onChanged.addListener).mock.calls[0][0] as Function;
+        const storageListener = vi.mocked(chrome.storage.onChanged.addListener).mock.calls[0][0] as Parameters<typeof chrome.storage.onChanged.addListener>[0];
         storageListener({ config: { newValue: { language: 'zh-HK' } } }, 'local');
 
         await vi.waitFor(() => {
