@@ -22,7 +22,6 @@ export function ApplicationShell({ children, showHeader = true }: { children: Re
             key={link.label}
             active={location.pathname === link.to}
             label={link.label}
-            /* @ts-ignore */
             leftSection={<link.icon size="1rem" stroke={1.5} />}
             onClick={() => {
                 navigate(link.to);
@@ -44,7 +43,6 @@ export function ApplicationShell({ children, showHeader = true }: { children: Re
                             <Title order={3}>{t('app.title')}</Title>
                         </Group>
                         <ActionIcon variant="subtle" color="gray" onClick={() => window.close()}>
-                            {/* @ts-ignore */}
                             <IconX size="1.2rem" />
                         </ActionIcon>
                     </Group>

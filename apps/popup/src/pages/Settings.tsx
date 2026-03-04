@@ -1,6 +1,6 @@
-import { Container, Title, Select, Button, Modal, Group, Text, ScrollArea } from '@mantine/core';
+import { Title, Select, ScrollArea } from '@mantine/core';
 import { useTranslation } from 'react-i18next';
-import { defaultConfig, getConfig, setConfig, LLMType } from '@repo/config';
+import { getConfig, setConfig, LLMType } from '@repo/config';
 import { useEffect, useState } from 'react';
 
 const LLM_OPTIONS = [

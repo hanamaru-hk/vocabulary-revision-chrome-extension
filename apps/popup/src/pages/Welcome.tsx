@@ -1,4 +1,4 @@
-import { Button, Center, Container, Select, Title, Stack, Image, ScrollArea } from '@mantine/core';
+import { Button, Center, Container, Select, Stack, Image, ScrollArea } from '@mantine/core';
 import { useTranslation } from 'react-i18next';
 import { defaultConfig, setConfig } from '@repo/config';
 import { useNavigate } from 'react-router-dom';

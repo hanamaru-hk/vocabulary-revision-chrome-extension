@@ -12,7 +12,6 @@ initI18nReact();
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
         <MantineProvider>
-            {/* @ts-ignore */}
             <MemoryRouter>
                 <App />
             </MemoryRouter>

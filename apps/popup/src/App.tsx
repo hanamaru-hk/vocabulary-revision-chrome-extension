@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { ApplicationShell } from './components/AppShell/AppShell';
 import { Vocabulary } from './pages/Vocabulary';
 import { Settings } from './pages/Settings';
@@ -8,7 +8,6 @@ import { About } from './pages/About';
 import { useEffect, useState } from 'react';
 import { Config, getConfig } from '@repo/config';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
 import { LoadingOverlay } from '@mantine/core';
 
 function App() {
@@ -24,7 +23,7 @@ function App() {
             }
         })
 
-        const listener = (changes: any, namespace: string) => {
+        const listener = (changes: Record<string, chrome.storage.StorageChange>, namespace: string) => {
             if (namespace === 'local' && changes.config) {
                 setConfig(changes.config.newValue);
             }
@@ -32,7 +31,7 @@ function App() {
 
         chrome.storage.onChanged.addListener(listener);
         return () => chrome.storage.onChanged.removeListener(listener);
-    }, [])
+    }, [i18n])
 
     return (
         <>
